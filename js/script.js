@@ -334,6 +334,13 @@ function addEventsCartButtons() {
             if (localStorage.getItem(idProduct) == null) {
                 localStorage.setItem(idProduct, JSON.stringify(product))
 
+                Toastify({
+                    text: "Product added to cart!",
+                    duration: "3000",
+                    backgroundColor: "green",
+                }).showToast()
+
+
                 const deletAnyProduct = document.createElement("div")
                 deletAnyProduct.innerHTML = `<button id='delete${idProduct}' class='deleteProductButton btn btn-danger'>Delete</button>`
                 document.getElementById("product" + idProduct).append(deletAnyProduct)
@@ -342,6 +349,12 @@ function addEventsCartButtons() {
                     localStorage.removeItem(idProduct)
                     deletAnyProduct.remove()
                 })
+            }else{
+                Toastify({
+                    text: "Product already added to cart!",
+                    duration: "3000",
+                    backgroundColor: "red"
+                }).showToast()
             }
 
         })
