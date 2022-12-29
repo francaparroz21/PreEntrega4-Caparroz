@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+    /* Paleta */
+    --purpura: #A269E6;
+    --naranja: #BA4A00;
+    --blanco: #C8C8D3;
+    --azul: #356A96;
+    --negro: #181B1D;
+    --rosa: #E9C1F1;
+    --cinderella: #fbcbcc;
+    --lavender-gray: #bcbcdb;
+    --sweet-pink: #fb9cac;
+    --cinderella: #fcdfe0;
+    --melanie: #e0c3d3;
+    --melanie: #e3c6dc;
+    --melon: #fcb4b4;
+    --wisp-pink: #fce4ec;
+    --linen: #fcf2f2;
+}
+
+/* Normalize */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BOOSTRAP DESREEBOOT */
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    margin-bottom: 0;
+    font-weight: 0;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    font-size: 1.5em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin-bottom: 0;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: var(--blanco);
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    color: var(--blanco);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+main,
+footer {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(rgba(20, 7, 12, 0.75), rgba(20, 7, 12, 0.75)), url(../images/background_eyebrow.PNG) no-repeat center center fixed;
+    color: var(--blanco);
+    background-size: cover;
+}
+
+footer {
+    margin-top: 1px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+footer div a {
+    width: 80px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+footer div a img {
+    width: 40px;
+}
+
+footer div a img:hover {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    transition: 0.3s;
+}
+
+/*Breakpoint footer*/
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+    footer a {
+        padding-left: 20px;
+        overflow: hidden;
+    }
+
+    footer a img {
+        width: 30px;
+    }
+}
+
+header .navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.52);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.52);
+}
+
+header .navbar a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+header .navbar ul {
+    list-style-type: none;
+}
+
+header .navbar .navbar-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .navbar .navbar-left a img {
+    max-width: 80px;
+    min-width: 80px;
+    margin-right: 20px;
+}
+
+header .navbar .navbar-left ul {
+    display: flex;
+    align-items: center;
+}
+
+header .navbar .navbar-left ul * {
+    margin: 10px;
+}
+
+header .navbar .navbar-left ul div li a:hover {
+    color: green;
+    transition: all .3s ease-in-out, color .3s ease-in-out;
+}
+
+header .navbar .navbar-left ul div li {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+main .intro_desc {
+    padding: 30px 50px 30px 50px;
+}
+
+main .intro_desc p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    color: var(--blanco);
+}
+
+main .intro_desc a {
+    color: var(--blanco);
+}
+
+main .intro_desc a:hover {
+    background-color: white;
+    color: var(--negro);
+    transition: .3s;
+}
+
+main .publication_makeup {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main .publication_makeup .publication_makeup_intro {
+    text-align: center;
+}
+
+main .publication_makeup .makeup_images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: center;
+}
+
+main .publication_makeup .makeup_images img {
+    width: 100%;
+}
+
+main .publication_makeup .publication_makeup_steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main .publication_makeup .publication_makeup_steps>* {
+    padding: 5px;
+}
+
+main .publication_makeup .publication_makeup_steps ul {
+    list-style-type: none;
+}
+
+main .publication_makeup .publication_makeup_steps .steps {
+    padding: 10px;
+}
+
+main .publication_makeup .since {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.bannerBox {
+    padding-top: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.bannerBox img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .publication_makeup {
+        display: inline;
+    }
+}
+
+/* Services */
+main .container_services section {
+    padding: 10px;
+    padding: 20px 50px 10px 50px;
+    border: 2px outset #d9d7d7;
+    text-align: center;
+}
+
+main .container_services section div {
+    height: min-content;
+}
+
+main .container_services section div article ul {
+    list-style-type: none;
+}
+
+main .container_services section div article .see_more {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+main .container_services section div article .see_more a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 18px;
+    padding: 10px;
+}
+
+main .container_services section div article .see_more a:hover {
+    background-color: var(--blanco);
+    color: black;
+    transition: .5s;
+}
+
+/*Catalogue */
+main .catalogue_info {
+    padding: 15px;
+}
+
+main .catalogue_info>* {
+    padding: 15px;
+}
+
+main .catalogue_container {
+    display: grid;
+    grid-area: "breast cellucontrol gelabs"
+        "alpinemask serum gelabs";
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 20px;
+}
+
+main .catalogue_container article h5 {
+    text-align: center;
+}
+
+main .catalogue_container article div {
+    display: flex;
+    justify-content: center;
+}
+
+main .catalogue_container article div img {
+    width: 100px;
+}
+
+main .catalogue_container .breast {
+    grid-area: breast;
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+main .catalogue_container .cellucontrol {
+    grid-area: cellucontrol;
+    grid-column: 4/8;
+    grid-row: 1/3;
+}
+
+main .catalogue_container .gelabs {
+    grid-area: gelabs;
+    grid-column: 8/12;
+    grid-row: 1/5;
+}
+
+main .catalogue_container .alpinemask {
+    grid-area: alpinemask;
+    grid-column: 1/4;
+    grid-row: 3/5;
+}
+
+main .catalogue_container .serum {
+    grid-area: serum;
+    grid-column: 4/8;
+    grid-row: 3/5;
+}
+
+/*Catalogue breakpoints*/
+@media only screen and (max-width: 650px) {
+    main .catalogue_container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*Contact form*/
+main .contact {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+main .contact form {
+    padding: 20px;
+    border: 2px solid var(--blanco);
+    width: min-content;
+}
+
+main .contact form p {
+    padding: 10px;
+}
+
+main .contact form .sur_form,
+main .contact form .name_form,
+main .contact form .query,
+main .contact form .born {
+    background-color: white;
+}
+
+main .contact form .query {
+    height: 100px;
+}
+
+main .contact form .buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+main .contact form .buttons input {
+    padding: 4px;
+    margin: 5px;
+}
+
+/*Contact Breakpoint*/
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+
+    .sur_form,
+    .name_form,
+    .query {
+        width: 200px;
+    }
+}
+
+/*Help*/
+main h2 {
+    padding: 20px;
+    text-align: center;
+}
+
+main .container_help {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+}
+
+main .container_help article {
+    padding: 15px;
+}
+
+main .container_help article>* {
+    padding: 5px;
+}
+
+main .container_help article a {
+    text-decoration: none;
+    color: var(--blanco);
+    text-decoration-line: underline;
+}
+
+main .container_help article a:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
+    transition: .3s;
+}
+
+
+/*Estilos para javascript*/
+nav>* {
+    padding: 10px;
+}
+
+.buttonsProductsDiv {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#pNameForm,
+#pPriceForm {
+    color: red;
+}
+
+#h2Products {
+    text-align: center;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#products>div {
+    width: 300px;
+    padding: 30px;
+}
+
+#products>div > * {
+    padding: 5px;
+}
+
+#products>p {
+    padding: 10px;
+}
+
+.added {
+    display: flex;
+    justify-content: end;
+    color: green;
+}
+
+.deleteButton {
+    color: white;
+    background-color: red;
+    padding: 5px;
+}
+
+.buttonsCart {
+    display: inline;
+}
+
+.addToCart {
+    padding: 5px;
+}
+
+.nameProduct{
+    text-align: center;
+}
+
+.imgProduct{
+    width: auto;
+    height: 300px;
+}
+
+#buyButton{
+    background-color: #00B210;
+}
+#deleteAll{
+    background-color: red;
+}
