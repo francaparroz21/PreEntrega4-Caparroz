@@ -212,17 +212,64 @@ function printProducts() {
 
     const divButtonsForCart = document.createElement("div")
     divButtonsForCart.setAttribute("id", "buttonsForCart")
-    divButtonsForCart.innerHTML = "<button type='button' class='btn btn-primary' id='buyButton'>Buy</button>"
-    document.getElementById("divProducts").append(divButtonsForCart)
+    divButtonsForCart.innerHTML = `<button type='button' class='btn btn-primary' id='buyButton'>Buy</button>
+                                <button type='button' class='btn btn-danger' id='deleteAllButton'>Delete All</button>`
 
-    eventBuyAlert()
+    document.getElementById("divProducts").append(divButtonsForCart)
+    eventBuyButton()
+    eventDeleteAllButton()
 }
 
-function eventBuyAlert() {
+function eventDeleteAllButton() {
+    document.getElementById("deleteAllButton").addEventListener("click", () => {
+        if (localStorage.length == 0) {
+            Swal.fire({
+                icon: "error",
+                title: "The cart are cleared",
+                text: "You dont have a products in your cart"
+
+            })
+        } else {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You are going to eliminate all products of the cart!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete all products!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.clear()
+                    swalWithBootstrapButtons.fire(
+                        'All products deleted!',
+                        'Your cart has been cleared.',
+                        'success'
+                    )
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your cart has not been cleared',
+                        'error'
+                    )
+                }
+            })
+        }
+    })
+}
+
+function eventBuyButton() {
     const buyButton = document.getElementById("buyButton")
 
     buyButton.addEventListener("click", () => {
-        console.log(localStorage.length)
         if (localStorage.length == 0) {
             Swal.fire({
                 title: 'Error!',
