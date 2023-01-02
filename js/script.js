@@ -220,6 +220,7 @@ function printProducts() {
     eventDeleteAllButton()
 }
 
+//Funcion que elimina todos los productos del carrito, si no hay ningun producto salta error.
 function eventDeleteAllButton() {
     document.getElementById("deleteAllButton").addEventListener("click", () => {
         if (localStorage.length == 0) {
@@ -248,6 +249,9 @@ function eventDeleteAllButton() {
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
+                    for(let i = 0; i<localStorage.length;i++){
+                        document.getElementById("delete"+(i+1)).remove()
+                    }
                     localStorage.clear()
                     swalWithBootstrapButtons.fire(
                         'All products deleted!',
@@ -266,6 +270,7 @@ function eventDeleteAllButton() {
     })
 }
 
+//Funcion para comprar los productos
 function eventBuyButton() {
     const buyButton = document.getElementById("buyButton")
 
@@ -280,7 +285,7 @@ function eventBuyButton() {
         else {
             let timerInterval
             Swal.fire({
-                title: 'Auto close alert!',
+                title: 'Buy in process!',
                 html: 'Wait... <b></b> .',
                 timer: 3000,
                 timerProgressBar: true,
@@ -301,7 +306,6 @@ function eventBuyButton() {
                         text: "Buy successful"
                     })
                     localStorage.clear()
-                    window.location.reload()
                 }
             })
         }
@@ -322,6 +326,7 @@ function hideProducts() {
 }
 
 
+//Funcion que agrega productos al carrito mediante un evento a un boton.
 function addEventsCartButtons() {
     //Eventos para cada uno de los botonees (add to cart).Agrega un producto al carrito (localstorage)
     const addToCartButtons = document.getElementsByClassName("addToCart")
@@ -356,11 +361,9 @@ function addEventsCartButtons() {
                     backgroundColor: "red"
                 }).showToast()
             }
-
         })
     }
 }
-
 
 
 
